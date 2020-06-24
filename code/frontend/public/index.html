@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script><link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CLato%7CKalam:300,400,700">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/my_css.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-bell">
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <!-- Page Header-->
+      <header class="section page-header header-creative-wrap context-dark">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-creative rd-navbar-creative-2" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="100px" data-xl-stick-up-offset="112px" data-xxl-stick-up-offset="132px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+            <div class="rd-navbar-aside-outer">
+              <div class="rd-navbar-aside">
+                <div class="rd-navbar-collapse">
+                  <ul class="contacts-classic">
+                    <li><span class="contacts-classic-title">前端github地址</span> <a class="link" href="tel:#">https://github.com/Freg-x/sitp_frontend</a>
+                    </li>
+                    <li><a href="mailto:#">同济大学软件学院sitp</a></li>
+                  </ul>
+                </div>
+                <!-- RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!-- RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                  <!-- RD Navbar Brand-->
+                  <div class="rd-navbar-brand">
+                    <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-light" src="images/logo.png" alt="" width="117" height="41"/></a>
+                  </div>
+                </div>
+                <div class="rd-navbar-aside-element">
+
+
+
+                  <!-- RD Navbar Search-->
+                  <div class="rd-navbar-search rd-navbar-search-2">
+                    <button class="rd-navbar-search-toggle rd-navbar-fixed-element-3" data-rd-navbar-toggle=".rd-navbar-search"><span></span></button>
+                    <form class="rd-search" action="search-results.html" data-search-live="rd-search-results-live" method="GET">
+                      <div class="form-wrap">
+                        <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="key" />
+                        <label class="form-label" for="rd-navbar-search-form-input">根据名称查询新番...</label>
+                        <div class="rd-search-results-live" id="rd-search-results-live"></div>
+                        <button class="rd-search-form-submit fl-bigmug-line-search74" type="submit"></button>
+                      </div>
+                    </form>
+                  </div>
+
+                  
+
+  
+                 
+                </div>
+              </div>
+            </div>
+
+            
+
+
+
+
+            <div class="rd-navbar-main-outer" id="navbar" >
+
+                <transition-group name='login'>
+                <div class="login_bg" v-if="login_show" key='bg'>
+
+                    <i class="fl-bigmug-line-close42 login_close" v-on:click="login_show=0"></i>
+                    <div class="login_word" >登录</div>
+                    <input class=" form-input user_name"  type="text"   placeholder="用户名" v-model="user_name">
+                    <input class=" form-input pass_word" placeholder="密码" type="password" v-model="pass_word">
+                    <div class="button-wrap login_button" data-caption-animate="fadeInLeft" data-caption-delay="400"><a class="button button-lg button-shadow-5 button-default-outline button-zakaria" id="login_button" v-on:click="login_request">登录</a></div>
+                  
+
+                </div>
+              </transition-group>
+
+              <div class="rd-navbar-main">
+                <div class="rd-navbar-nav-wrap">
+                  <ul class="rd-navbar-nav">
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="rd-nav-item ">
+
+                        <span class="rd-nav-link" v-on:click="handleClick">Mine</span>
+                       
+
+                    </li>
+                  
+                  
+                   
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+
+      <!-- Swiper-->
+      <section class="section swiper-container swiper-slider swiper-slider-4" data-loop="true" data-autoplay="5000">
+        <div class="swiper-wrapper context-dark">
+          <div class="swiper-slide swiper-slide-1" data-slide-bg="images/promare.jpg">
+            <div class="swiper-slide-caption section-md text-sm-left">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-8 col-md-7">
+                    <h2 class="swiper-title-1" data-caption-animate="fadeInLeft" data-caption-delay="100" >Promare
+                    </h2>
+                    <h5 class="swiper-title-2 text-width-medium" data-caption-animate="fadeInLeft" data-caption-delay="250">和trigger一起点燃宇宙</h5>
+                    <div class="button-wrap" data-caption-animate="fadeInLeft" data-caption-delay="400"><a class="button button-lg button-shadow-5 button-default-outline button-zakaria" href="anime_info.html?id=218713">查看详情</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide-2" data-slide-bg="images/bingo.jpeg">
+            <div class="swiper-slide-caption section-md text-center">
+              <div class="container">
+                <h2 class="swiper-title-1" data-caption-animate="fadeInLeft" data-caption-delay="100">冰菓</h2>
+                <h5 class="swiper-title-2" data-caption-animate="fadeInRight" data-caption-delay="250">”我很好奇！“<br class="d-none d-md-block">
+                </h5>
+                <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a class="button button-lg button-shadow-5 button-default-outline button-zakaria" href="anime_info.html?id=27364">查看详情</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+        <!-- Swiper Pagination-->
+        <div class="swiper-pagination"></div>
+        <!-- Swiper Navigation-->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </section>
+      
+      <!-- index items-->
+      <section class="section section-xxl bg-default" id="index_rec">
+        <div class="container">
+          <h2 class="text-transform-capitalize wow fadeScale">热门番剧</h2>
+
+          <div class="row row-lg row-30 row-lg-50">
+
+            <div class="col-sm-6 col-md-4 col-lg-3" v-for="anime in animes">
+              <!-- Product-->
+              <article class="product wow fadeInRight">
+                <div class="product-body">
+                  <div class="product-figure"><img v-bind:src='anime.cover_url' alt="" width="196" height="134"/>
+                  </div>
+                  <h5 class="product-title"><a href="anime_info.html">{{anime.name}}</a></h5>
+                  <div class="product-price-wrap">
+                   
+                    <div class="product-price">{{anime.score}}</div>
+                  </div>
+                </div>
+                <!--span class="product-badge product-badge-sale" --><!--/span-->
+                <div class="product-button-wrap">
+                  <div class="product-button"><a class="button button-secondary button-zakaria fl-bigmug-line-search74" v-bind:href="'anime_info.html?id='+anime.id"></a></div>
+                  <div class="product-button"><a class="button button-primary button-zakaria fl-bigmug-line-favourites5" v-bind:id="'fav'+anime.id" v-on:click="handle_fav"></a></div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="pagination-wrap">
+            <!-- Bootstrap Pagination-->
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li class="page-item page-item-control disabled"><a class="page-link" href="#" aria-label="Previous"><span class="icon" aria-hidden="true"></span></a></li>
+                <li class="page-item " v-if="cur_page>3" ><a class="page-link" href="/index.html?page=1">1</a></li>
+                <li class="page-item" v-if="cur_page>3"><a class="page-link" >...</a></li>
+
+
+                <li class="page-item " v-if="cur_page>1" ><a class="page-link" v-bind:href="'/index.html?page='+(cur_page-1)">{{cur_page-1}}</a></li>
+                <li class="page-item active"><a class="page-link" v-bind:href="'/index.html?page='+cur_page">{{cur_page}}</a></li>
+                <li class="page-item " v-if="cur_page<total_page"><a class="page-link" v-bind:href="'/index.html?page='+(cur_page+1)">{{cur_page+1}}</a></li>
+
+                <li class="page-item" v-if="cur_page<total_page-2"><a class="page-link">...</a></li>
+
+                <li class="page-item" v-if="cur_page<total_page-2"><a class="page-link" v-bind:href="'/index.html?page='+total_page">{{total_page}}</a></li>
+                <li class="page-item page-item-control"><a class="page-link" href="#" aria-label="Next"><span class="icon" aria-hidden="true"></span></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </section>
+
+      <!-- Counter Modern-->
+      <section class="parallax-container" data-parallax-img="images/parallax-2.jpg">
+        <div class="parallax-content section-xxl context-dark">
+          <div class="container">
+            <div class="row row-30 justify-content-center">
+              <div class="col-6 col-sm-3">
+                <div class="counter-modern">
+                  <h2 class="counter-modern-number"><span class="counter">223</span>
+                  </h2>
+                  <div class="counter-modern-decor"></div>
+                  <h5 class="counter-modern-title">番剧数据库</h5>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="counter-modern">
+                  <h2 class="counter-modern-number"><span class="counter">10000</span>
+                  </h2>
+                  <div class="counter-modern-decor"></div>
+                  <h5 class="counter-modern-title">用户评分</h5>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="counter-modern">
+                  <h2 class="counter-modern-number"><span class="counter">25</span>
+                  </h2>
+                  <div class="counter-modern-decor"></div>
+                  <h5 class="counter-modern-title">多类番剧信息</h5>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Section Product and Clients-->
+      
+      <!-- What People Say-->
+      <!-- Masonry Gallery-->
+      
+      <!-- Subscribe to Our Newsletter-->
+      <!-- Our Team-->
+      
+      <!-- Section Clients-->
+    
+     
+      <!-- Page Footer-->
+      <footer class="section footer-modern footer-modern-2">
+        
+        <div class="footer-modern-panel text-center">
+          <div class="container">
+            <p class="rights"><span>Copyright &copy; 2020.Tongji University</span></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/vm_index.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+syntax="proto3";
+
+import "google/api/annotations.proto";
+
+message BangumiDetailReq {
+    int32 bangumi_id=1;
+}
+
+message BangumiListReq {
+    int32 page=1;
+}
+
+message BangumiInfo {
+    int32 bangumi_id=1;
+    string name=2;
+    string cover_url=3;
+    string tags=4;
+    float bangumi_score=5;
+}
+
+message BangumiDetail {
+    int32 bangumi_id=1;
+    string name=2;
+    string cover_url=3;
+    float bangumi_score=4;
+    int32 vote_num=5;
+    int32 episode_num=6;
+    string tags=7;
+    string desc=8;
+    string staff_list=9;
+    string cv_list=10;
+}
+
+message BangumiList {
+    repeated BangumiInfo bangumi_list=1;
+    string msg=2;
+}
+
+service InfoService {
+    rpc GetBangumiDetail(BangumiDetailReq) returns (BangumiDetail) {
+            option (google.api.http) = {
+                get: "/api/v1/bangumi/{bangumi_id}"
+            };
+        }
+    rpc GetBangumiList(BangumiListReq) returns (BangumiList) {
+            option (google.api.http) = {
+                get: "/api/v1/bangumi/all/{page}"
+            };
+        }
+}
+
+message FavoriteReq {
+    int32 id=1;
+}
+
+message FavoriteRsp {
+    repeated BangumiInfo favorites_list=1;
+    string msg=2;
+}
+
+service FavoriteService {
+    rpc GetFavorite(FavoriteReq) returns(FavoriteRsp){
+        option(google.api.http) ={
+            get: "/api/v1/{id}/favorites"
+        };
+    }
+}
+
+message SessionReq{
+    int32 id = 1;
+    string password =2;
+}
+
+message SessionRsp{
+    int32 id = 1;
+    string username=2;
+    string email=4;
+    string fav_bangumi_list=5;
+    string msg=6;
+    string jwt=7;
+}
+
+message RegisterReq{
+    string password=1;
+    string username=2;
+    string email=3;
+}
+
+message RegisterRsp{
+    int32 id=1;
+    string msg=2;
+}
+
+service UserService {
+    rpc Sessions(SessionReq) returns(SessionRsp){
+        option (google.api.http) = {
+            post: "/api/v1/sessions"
+            body: "*"
+        };
+    }
+
+    rpc Register(RegisterReq) returns(RegisterRsp){
+        option (google.api.http) = {
+            post: "/api/v1/users"
+            body: "*"
+        };
+    }
+}

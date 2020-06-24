@@ -1,0 +1,10 @@
+.DS_Store
+.idea/
+uwsgi/
+uWSGI.log
+uwsgi.ini
+uwsgi.pid
+uwsgi.status
+uwsi_params
+__pycache__
+system/__pycache__

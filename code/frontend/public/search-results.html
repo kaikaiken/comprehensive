@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Search Results</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script><link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CLato%7CKalam:300,400,700">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-bell">
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page" >
+      <!-- Page Header-->
+      
+
+      <section class="breadcrumbs-custom">
+       
+        <div class="breadcrumbs-custom-footer">
+          <div class="container">
+            <ul class="breadcrumbs-custom-path">
+              <li><a href="index.html">Home</a></li>
+              <li class="active">Search Results</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Search results-->
+      <section class="section section-xl bg-default">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-9">
+              <!-- RD Search-->
+              <form class="rd-form rd-search rd-form-inline" action="search-results.html" method="GET">
+                <div class="form-wrap">
+                  <input class="form-input" id="rd-search-form-input" type="text" name="key" placeholder="Enter keywords">
+                 
+                </div>
+                <div class="form-button">
+                  <button class="button button-primary" type="submit">Search</button>
+                </div>
+              </form>
+              <div class="rd-search-results"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      
+      <section class="section bg-default text-md-left" v-for="anime in results">
+        <div class="container">
+          <div class="row row-20 row-md-50 row-lg-60 justify-content-center align-items-md-center">
+            <div class="col-sm-6 col-md-3 col-xl-4">
+              <div class="inset-xl-right-20">
+                <div class="product-wrap-1 bg-image-1 block-1">
+                  <!-- Owl Carousel-->
+                  
+                    <article class="product-creative">
+                      <div class="product-figure"><img v-bind:src="anime.url" alt="" width="470" height="324"/>
+                      </div>
+                      <h4 class="product-creative-title"><a v-bind:href="'/anime_info.html?id='+anime.id">{{anime.name}}</a></h4>
+                      <div class="product-creative-price-wrap">
+                      
+                        <div class="product-creative-price">{{anime.score}}</div>
+                      </div>
+                    </article>
+                
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-9 col-xl-8">
+              <h2 class="text-transform-capitalize wow fadeInRight">{{anime.name}}</h2>
+              <!-- Bootstrap collapse-->
+              <div class="card-group-custom card-group-corporate" id="accordion1" role="tablist" aria-multiselectable="false">
+                <!-- Bootstrap card-->
+                <article class="card card-custom card-corporate wow fadeInRight" data-wow-delay=".1s">
+                  <div class="card-header" role="tab">
+                    <div class="card-title"><a id="accordion1-card-head-fvdtqdol" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-card-body-gbqibwcr" aria-controls="accordion1-card-body-gbqibwcr" aria-expanded="true" role="button">剧情简介
+                        <div class="card-arrow">
+                          <div class="icon"></div>
+                        </div></a></div>
+                  </div>
+                  <div class="collapse show" id="accordion1-card-body-gbqibwcr" aria-labelledby="accordion1-card-head-fvdtqdol" data-parent="#accordion1" role="tabpanel">
+                    <div class="card-body">
+                      <p>{{anime.desc}}</p>
+                    </div>
+                  </div>
+                </article>
+                <!-- Bootstrap card-->
+                <article class="card card-custom card-corporate wow fadeInRight" data-wow-delay=".2s">
+                  <div class="card-header" role="tab">
+                    <div class="card-title"><a class="collapsed" id="accordion1-card-head-mvowfrug" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-card-body-fyqmewaq" aria-controls="accordion1-card-body-fyqmewaq" aria-expanded="false" role="button">核心staff
+                        <div class="card-arrow">
+                          <div class="icon"></div>
+                        </div></a></div>
+                  </div>
+                  <div class="collapse" id="accordion1-card-body-fyqmewaq" aria-labelledby="accordion1-card-head-mvowfrug" data-parent="#accordion1" role="tabpanel">
+                    <div class="card-body">
+                    <p>导演：{{anime.staff_list['导演']}}</p>
+                    <p>脚本：{{anime.staff_list['脚本']}}</p>
+                    <p>分镜：{{anime.staff_list['分镜']}}</p>
+                    </div>
+                  </div>
+                </article>
+                
+                <!-- Bootstrap card-->
+               
+              </div>
+            </div>
+
+            <div class="col-xl-12">
+              <div class="row row-30">
+             
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+
+      
+
+
+
+
+
+
+      <!-- Page Footer-->
+      <footer class="section footer-modern footer-modern-2">
+        <div class="footer-modern-panel text-center">
+          <div class="container">
+            <p class="rights"><span>Copyright &copy; 2020.Tongji University</span></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/vm_search_results.js" type="module"></script>
+  </body>
+</html>

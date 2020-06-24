@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>MyPage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script><link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CLato%7CKalam:300,400,700">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/my_css.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-bell">
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <!-- Page Header-->
+     
+      <section class="breadcrumbs-custom" >
+        
+        <div class="breadcrumbs-custom-footer">
+          <div class="container">
+            <ul class="breadcrumbs-custom-path">
+              <li><a href="index.html">Home</a></li>
+              <li class="active">MyPage</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Section Shop-->
+
+      <section class="section section-xxl bg-default text-md-left" id="my_fav">
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-lg-4 col-xl-3">
+              <div class="aside row row-30 row-md-50 justify-content-md-between">
+                <div class="aside-item col-12">
+                  <h6 class="aside-title">欢迎！{{user_name}}</h6>
+                  <!-- RD Range-->
+                  
+                  
+                </div>
+                <div class="aside-item col-sm-6 col-md-5 col-lg-12">
+                 
+                  <!-- RD Search Form-->
+                  <form class="rd-search form-search" action="search-results.html" method="GET">
+                    <div class="form-wrap">
+                      <input class="form-input" id="search-form" type="text" name="key" placeholder="快速搜索">
+                    
+                      <button class="button-search fl-bigmug-line-search74" type="submit"></button>
+                    </div>
+                  </form>
+                </div>
+                <div class="aside-item col-sm-6 col-lg-12">
+                  <h6 class="aside-title">协同过滤</h6>
+                  <div class="row row-10 row-lg-20 gutters-10">
+                    <div class="col-4 col-sm-6 col-md-12" v-for="anime in rec_list">
+                      <!-- Product Minimal-->
+                      <article class="product-minimal">
+                        <div class="unit unit-spacing-sm flex-column flex-md-row align-items-center">
+                          <div class="unit-left"><a class="product-minimal-figure" v-bind:href="'/anime_info.html?id='+anime.id"><img v-bind:src="anime.url" alt="" width="106" height="104"/></a></div>
+                          <div class="unit-body">
+                            <p class="product-minimal-title"><a v-bind:href="'/anime_info.html?id='+anime.id">{{anime.name}}</a></p>
+                            <p class="product-minimal-price">{{anime.score}}</p>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8 col-xl-9">
+              <div class="product-top-panel group-md">
+                <p class="product-top-panel-title">您共计收藏了{{fav_list.length}}部动画</p>
+                <div>
+                  <div class="group-sm group-middle">
+                      <div class="product-top-panel-sorting log_out" v-on:click="handle_logout">
+                          注销
+                        </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row row-30 row-lg-50">
+
+                  <div class="col-sm-6 col-md-4 col-lg-6 col-xl-4" v-for="anime in fav_list">
+                      <!-- Product-->
+                      <article class="product">
+                        <div class="product-body">
+                          <div class="product-figure"><img v-bind:src="anime.url" alt="" width="196" height="134"/>
+                          </div>
+                          <h5 class="product-title"><a v-bind:href="'/anime_info.html?id='+anime.id">{{anime.name}}</a></h5>
+                          <div class="product-price-wrap">
+                
+                            <div class="product-price">{{anime.score}}</div>
+                          </div>
+                        </div><span class="product-badge product-badge-sale">{{anime.ep_num}}话</span>
+                        <div class="product-button-wrap">
+                          <div class="product-button"><a class="button button-secondary button-zakaria fl-bigmug-line-search74" v-bind:href="'/anime_info.html?id='+anime.id"></a></div>
+                          <div class="product-button"><a class="button button-primary button-zakaria fl-bigmug-line-close42" v-bind:id="'del'+anime.id" v-on:click="handle_del"></a></div>
+                        </div>
+                      </article>
+                    </div>
+              
+             
+               
+            </div>
+            <div class="pagination-wrap page_div" >
+                <!-- Bootstrap Pagination-->
+                <nav aria-label="Page navigation">
+                  <ul class="pagination">
+                    <li class="page-item page-item-control disabled"><a class="page-link" href="#" aria-label="Previous"><span class="icon" aria-hidden="true"></span></a></li>
+                    <li class="page-item " v-if="cur_page>3" ><a class="page-link" href="/my_page.html?page=1">1</a></li>
+                    <li class="page-item" v-if="cur_page>3"><a class="page-link" >...</a></li>
+    
+    
+                    <li class="page-item " v-if="cur_page>1" ><a class="page-link" v-bind:href="'/my_page.html?page='+(cur_page-1)">{{cur_page-1}}</a></li>
+                    <li class="page-item active"><a class="page-link" v-bind:href="'/my_page.html?page='+cur_page">{{cur_page}}</a></li>
+                    <li class="page-item " v-if="cur_page<total_page"><a class="page-link" v-bind:href="'/my_page.html?page='+(cur_page+1)">{{cur_page+1}}</a></li>
+    
+                    <li class="page-item" v-if="cur_page<total_page-2"><a class="page-link">...</a></li>
+    
+                    <li class="page-item" v-if="cur_page<total_page-2"><a class="page-link" v-bind:href="'/my_page.html?page='+total_page">{{total_page}}</a></li>
+                    <li class="page-item page-item-control"><a class="page-link" href="#" aria-label="Next"><span class="icon" aria-hidden="true"></span></a></li>
+                  </ul>
+                </nav>
+              </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Page Footer-->
+      <footer class="section footer-modern footer-modern-2">
+        <div class="footer-modern-panel text-center">
+          <div class="container">
+            <p class="rights"><span>Copyright &copy; 2020.Tongji University</span></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/vm_my_page.js" type="module"></script>
+  </body>
+</html>

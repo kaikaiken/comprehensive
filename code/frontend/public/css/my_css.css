@@ -1,0 +1,90 @@
+.login-enter,.login-leave-to{
+    opacity: 0;
+}
+.login-enter-to,.login-leave{
+    opacity: 1;
+}
+.login-enter-active,.login-leave-active{
+    transition: all 1s;
+}
+
+
+
+.login_bg{
+    position: fixed;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    margin-top: 0;
+    background: rgba(0, 0, 0, .9);
+    transition: all .3s ease-in-out;
+    z-index: 1090
+}
+
+.login_word{
+    position: absolute;
+    color:white;
+    font-size: 48px;
+    left: 46%;
+    top:80px;
+    letter-spacing: 10px;
+    transition: all .3s ease-in-out;
+}
+
+
+.user_name{
+    position: absolute;
+    top:200px;
+    width: 40%;
+    left: 30%;
+    font-size: 24px;
+    transition: all .3s ease-in-out;
+}
+
+.pass_word{
+    position: absolute;
+    top:300px;
+    width: 40%;
+    left: 30%;
+    font-size: 24px;
+    transition: all .3s ease-in-out;
+}
+
+.login_close{
+    position:absolute;
+    left: 90%;
+    color: white;
+    top:90px;
+    font-size: 30px;
+}
+
+.login_close:hover{
+    color:grey;
+}
+
+.login_button{
+    position: absolute;
+    top:450px;
+    margin-left: 45%;
+}
+
+.log_out{
+ transition: 0.5s;
+ 
+ text-align: center;
+ width: 80px;
+ height: 30px;
+ padding: 10px,10px,10px,10px;
+ background-color: red;
+ color:white;
+ font-weight: 700;
+ border-radius: 3px;
+   
+}
+.log_out:hover{
+    background-color:coral;
+    cursor: pointer;
+}

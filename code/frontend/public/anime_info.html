@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Anime_Info</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script><link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CLato%7CKalam:300,400,700">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-bell">
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <!-- Page Header-->
+      
+    
+      <section class="breadcrumbs-custom" >
+        
+        <div class="breadcrumbs-custom-footer">
+          <div class="container">
+            <ul class="breadcrumbs-custom-path">
+              <li><a href="index.html">Home</a></li>
+              <li class="active">Anime Info</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Single Product-->
+      <section class="section section-sm section-first bg-default" id='anime_info'>
+        <div class="container">
+          <div class="row row-30">
+            <div class="col-lg-5">
+              <div class="slick-vertical slick-product">
+                <!-- Slick Carousel-->
+                <div class="slick-slider carousel-parent" id="carousel-parent" data-items="1" data-swipe="true" data-child="#child-carousel" data-for="#child-carousel">
+                  <div class="item">
+                    <div class="slick-product-figure"><img v-bind:src='cover_url' alt="" />
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="single-product">
+                <h3 class="text-transform-none font-weight-medium">{{name}}</h3>
+                <div class="group-md group-middle">
+                  <div class="single-product-price">{{bangumi_score}}</div>
+                  <div class="single-product-rating"><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star-half"></span></div>
+                </div>
+                <p>{{desc}}</p>
+                <hr class="hr-gray-100">
+                <ul class="list list-description">
+                  <li><span>总集数:</span><span>{{episode_num}}</span></li>
+                  <li><span>评分人数:</span><span>{{vote_num}}</span></li>
+                </ul>
+
+                <div class="group-xs group-middle">
+                  
+                  <div><a class="button button-lg button-primary button-zakaria" v-on:click="handle_fav">加入收藏</a></div>
+                </div>
+                <hr class="hr-gray-100">
+                <div class="group-xs group-middle"><span class="list-social-title">Share</span>
+                  <div>
+                    <ul class="list-inline list-social list-inline-sm">
+                      <li><a class="icon mdi mdi-facebook" href="#"></a></li>
+                      <li><a class="icon mdi mdi-twitter" href="#"></a></li>
+                      <li><a class="icon mdi mdi-instagram" href="#"></a></li>
+                      <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Bootstrap tabs-->
+          <div class="tabs-custom tabs-horizontal tabs-line" id="tabs-1">
+            <!-- Nav tabs-->
+            <div class="nav-tabs-wrap">
+              <ul class="nav nav-tabs nav-tabs-1">
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-1-1" data-toggle="tab">testimonials</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-2" data-toggle="tab">Additional information</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-3" data-toggle="tab">Delivery and payment</a></li>
+              </ul>
+            </div>
+            <!-- Tab panes-->
+            <div class="tab-content tab-content-1">
+              <div class="tab-pane fade show active" id="tabs-1-1">
+                <div class="box-comment">
+                  <div class="unit flex-column flex-sm-row unit-spacing-md">
+                    <div class="unit-left"><a class="box-comment-figure" href="#"><img src="images/user-1-119x119.jpg" alt="" width="119" height="119"/></a></div>
+                    <div class="unit-body">
+                      <div class="group-sm group-justify">
+                        <div>
+                          <div class="group-xs group-middle">
+                            <h5 class="box-comment-author"><a href="#">Jane Doe</a></h5>
+                            <div class="box-rating"><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star-half"></span></div>
+                          </div>
+                        </div>
+                        <div class="box-comment-time">
+                          <time datetime="2020-11-30">Nov 30, 2020</time>
+                        </div>
+                      </div>
+                      <p class="box-comment-text">Urna molestie at elementum eu facilisis sed odio. Odio eu feugiat pretium nibh ipsum consequat nisl vel. Sed risus ultricies tristique nulla aliquet enim tortor. Sapien faucibus et molestie ac feugiat sed. </p>
+                    </div>
+                  </div>
+                </div>
+               
+                
+              </div>
+              <div class="tab-pane fade" id="tabs-1-2">
+                <div class="single-product-info">
+                  <div class="unit unit-spacing-md flex-column flex-sm-row align-items-sm-center">
+                    <div class="unit-left"><span class="icon icon-80 mdi mdi-information-outline"></span></div>
+                    <div class="unit-body">
+                      <p>Ac orci phasellus egestas tellus rutrum tellus pellentesque. Pellentesque elit eget gravida cum sociis. Ut porttitor leo a diam sollicitudin tempor id. Consectetur lorem donec massa sapien faucibus et molestie ac. Rutrum tellus pellentesque eu tincidunt tortor aliquam. Lacinia at quis risus sed. Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="tabs-1-3">
+                <div class="single-product-info">
+                  <div class="unit unit-spacing-md flex-column flex-sm-row align-items-sm-center">
+                    <div class="unit-left"><span class="icon icon-80 mdi mdi-truck-delivery"></span></div>
+                    <div class="unit-body">
+                      <p>Ut tortor pretium viverra suspendisse potenti. Fermentum leo vel orci porta non pulvinar neque laoreet suspendisse. Pellentesque dignissim enim sit amet. Rhoncus urna neque viverra justo nec ultrices dui sapien eget. Diam phasellus vestibulum lorem sed risus. Feugiat in fermentum posuere urna. Feugiat vivamus at augue eget arcu. Feugiat pretium nibh ipsum consequat.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Related Products-->
+      <section class="section section-sm section-last bg-default" id='rec_info'>
+        <div class="container">
+          <h4 class="font-weight-sbold">相似推荐</h4>
+          <div class="row row-lg row-30 row-lg-50 justify-content-center" >
+
+              <article class="product wow fadeInRight" v-for="anime in animes">
+                  <div class="product-body">
+                    <div class="product-figure"><img v-bind:src='anime.url' alt="" width="196" height="134"/>
+                    </div>
+                    <h5 class="product-title"><a v-bind:href="'/anime_info.html?id='+anime.id">{{anime.name}}</a></h5>
+                    <div class="product-price-wrap">
+                     
+                      <div class="product-price">{{anime.score}}</div>
+                    </div>
+                  </div>
+                  <!--span class="product-badge product-badge-sale" --><!--/span-->
+                  <div class="product-button-wrap">
+                    <div class="product-button"><a class="button button-secondary button-zakaria fl-bigmug-line-search74" v-bind:href="'anime_info.html?id='+anime.id"></a></div>
+                    <div class="product-button"><a class="button button-primary button-zakaria fl-bigmug-line-favourites5" href="#"></a></div>
+                  </div>
+                </article>
+              </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- Page Footer-->
+      <footer class="section footer-modern footer-modern-2">
+        
+        <div class="footer-modern-panel text-center">
+          <div class="container">
+            <p class="rights"><span>Copyright &copy; 2020.Tongji University</span></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/vm_anime_info.js" type="module"></script>
+  </body>
+</html>

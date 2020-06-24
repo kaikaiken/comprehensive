@@ -39,9 +39,8 @@ func getAllUsers(c echo.Context) (err error) {
 	var results []model.User
 	err = collection.Find(nil).All(&results)
 	if err != nil {
-		return err
+		return c.JSON(http.StatusInternalServerError, err)
 	}
-	fmt.Println(results)
 	return c.JSON(http.StatusOK, results)
 }
 
@@ -52,7 +51,7 @@ func getUser(c echo.Context) (err error) {
 	var result model.User
 	err = collection.FindId(bson.ObjectIdHex(id)).One(&result)
 	if err != nil {
-		return err
+		return c.JSON(http.StatusInternalServerError, err)
 	}
 	return c.JSON(http.StatusOK, result)
 }
@@ -63,12 +62,12 @@ func updateUser(c echo.Context) (err error) {
 	var updatedUser model.User
 	err = c.Bind(&updatedUser)
 	if err != nil {
-		return err
+		return c.JSON(http.StatusInternalServerError, err)
 	}
 	username := c.Param("username")
 	err = collection.Update(bson.M{"username": username}, updatedUser)
 	if err != nil {
-		return err
+		return c.JSON(http.StatusInternalServerError, err)
 	}
 	return c.JSON(http.StatusOK, updatedUser)
 }
@@ -80,7 +79,7 @@ func getUserByUserName(c echo.Context) (err error) {
 	var result model.User
 	err = collection.Find(bson.M{"username": username}).One(&result)
 	if err != nil {
-		return err
+		return c.JSON(http.StatusInternalServerError, err)
 	}
 	return c.JSON(http.StatusOK, result)
 }
@@ -95,12 +94,12 @@ func newUser(c echo.Context) (err error) {
 	log.Println("newUser: ", newUser)
 
 	if err != nil {
-		return err
+		return c.JSON(http.StatusInternalServerError, err)
 	}
 	collection.Find(bson.M{"username": newUser.UserName}).One(&checkUser)
 	log.Println("checkUser: ", checkUser)
 	if len(checkUser.UserName) > 0 {
-		return c.JSON(http.StatusBadRequest, "Already in")
+		return c.JSON(http.StatusBadRequest, "这个用户名已经被注册了")
 	}
 
 	newUser.Role = 2
@@ -109,7 +108,7 @@ func newUser(c echo.Context) (err error) {
 	newUser.Id = bson.NewObjectId()
 	err = collection.Insert(&newUser)
 	if err != nil {
-		return err
+		return c.JSON(http.StatusInternalServerError, err)
 	}
 	return c.JSON(http.StatusOK, newUser)
 }
@@ -121,10 +120,16 @@ func addBangumi(c echo.Context) (err error) {
 	username := c.Param("username")
 	err = collection.Find(bson.M{"username": username}).One(&updatedUser)
 	if err != nil {
-		return err
+		return c.JSON(http.StatusInternalServerError, err)
 	}
 	bangumiId := c.Param("bangumiId")
 	bangumiList := updatedUser.BangumiList
+	for _, v := range bangumiList {
+		if v == bangumiId {
+			return c.JSON(http.StatusBadRequest, "已经收藏了")
+		}
+	}
+
 	bangumiList = append(bangumiList, bangumiId)
 	// if len(bangumiList) == 0 {
 	// 	bangumiList = bangumiId
@@ -134,7 +139,7 @@ func addBangumi(c echo.Context) (err error) {
 	updatedUser.BangumiList = bangumiList
 	err = collection.Update(bson.M{"username": username}, updatedUser)
 	if err != nil {
-		return err
+		return c.JSON(http.StatusInternalServerError, err)
 	}
 	return c.JSON(http.StatusOK, updatedUser)
 }
@@ -146,7 +151,7 @@ func removeBangumi(c echo.Context) (err error) {
 	username := c.Param("username")
 	err = collection.Find(bson.M{"username": username}).One(&updatedUser)
 	if err != nil {
-		return err
+		return c.JSON(http.StatusInternalServerError, err)
 	}
 	bangumiId := c.Param("bangumiId")
 	bangumiList := updatedUser.BangumiList
@@ -164,7 +169,7 @@ func removeBangumi(c echo.Context) (err error) {
 	updatedUser.BangumiList = bangumiList
 	err = collection.Update(bson.M{"username": username}, updatedUser)
 	if err != nil {
-		return err
+		return c.JSON(http.StatusInternalServerError, err)
 	}
 	return c.JSON(http.StatusOK, updatedUser)
 }
@@ -203,7 +208,7 @@ func userLogin(c echo.Context) (err error) {
 		// Generate encoded token and send it as response.
 		t, err := token.SignedString([]byte("secret"))
 		if err != nil {
-			return err
+			return c.JSON(http.StatusInternalServerError, err)
 		}
 		return c.JSON(http.StatusOK, map[string]string{
 			"token": t,

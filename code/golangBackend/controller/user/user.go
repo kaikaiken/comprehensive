@@ -95,7 +95,7 @@ func newUser(c echo.Context) (err error) {
 	}
 	collection.Find(bson.M{"username": newUser.UserName}).One(checkUser)
 	if len(checkUser.UserName) > 0 {
-		return err
+		return c.JSON(http.StatusBadRequest, "Already in")
 	}
 
 	newUser.Role = 2
@@ -146,7 +146,7 @@ func removeBangumi(c echo.Context) (err error) {
 	bangumiId := c.Param("bangumiId")
 	bangumiList := updatedUser.BangumiList
 
-	deleteInSlice(bangumiList, bangumiId)
+	bangumiList = deleteInSlice(bangumiList, bangumiId)
 
 	// bangumi_array := strings.Split(bangumiList, `,`)
 	// for i, v := range bangumi_array {

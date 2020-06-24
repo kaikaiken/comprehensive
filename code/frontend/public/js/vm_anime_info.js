@@ -1,12 +1,8 @@
 import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js'
 
 window.onload = function () {
-
     var search = window.location.search;
     var anime_id = getSearchString('id', search);
-
-
-
 
     axios.get('http://47.105.129.153:8000/bangumi/' + anime_id)
         .then(function (response) {
@@ -22,11 +18,7 @@ window.onload = function () {
             anime_info.desc = data.desc;
             anime_info.staff_list = data.staff_liste;
             anime_info.cv_list = data.cv_list;
-
         });
-
-
-
 
     axios.get('http://47.105.129.153:8000/CB/' + anime_id)
         .then(function (response) {
@@ -39,7 +31,6 @@ window.onload = function () {
                     'url': data[i].cover_url,
                     'score': data[i].bangumi_score,
                     'name': data[i].name
-
                 }
                 rec_info.animes.push(new_anime);
             }
@@ -48,7 +39,6 @@ window.onload = function () {
 
 
 }
-
 
 var anime_info = new Vue({
     el: '#anime_info',
@@ -74,21 +64,18 @@ var anime_info = new Vue({
 
                 axios.get('http://47.105.129.153:1323/api/user/username/' + username + '/addBangumi/' + req_id).then(
                     function () {
-
                         var new_list = sessionStorage.getItem("fav_list") + ',' + req_id;
                         console.log(new_list);
                         sessionStorage.setItem("fav_list", new_list);
                         alert("success");
                     }
-                );
+                ).catch(function (err) {
+                    alert(err)
+                });
             }
         }
-
-
     }
 });
-
-
 
 var rec_info = new Vue({
     el: '#rec_info',
@@ -100,12 +87,6 @@ var rec_info = new Vue({
     }
 
 });
-
-
-
-
-
-
 
 function getSearchString(key, Url) {
     var str = Url;

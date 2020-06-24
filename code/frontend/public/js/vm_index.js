@@ -2,16 +2,11 @@ import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js
 
 
 window.onload = function () {
-
-
-
-
     navbar.login_status = sessionStorage.getItem("login_status");
 
     var search = window.location.search;
     var page_key = getSearchString('page', search);
     index_rec.cur_page = page_key > 0 ? parseInt(page_key) : 1;
-
 
     axios.get('http://47.105.129.153:8000/bangumiAll/' + index_rec.cur_page)
         .then(function (response) {
@@ -29,13 +24,7 @@ window.onload = function () {
             }
 
         });
-
-
 }
-
-
-
-
 
 var index_rec = new Vue({
     el: '#index_rec',
@@ -47,7 +36,6 @@ var index_rec = new Vue({
     },
     methods: {
         handle_fav: function (event) {
-
             if (!sessionStorage.getItem('login_status')) navbar.login_show = 1;
             else {
                 var username = sessionStorage.getItem('username');
@@ -58,18 +46,13 @@ var index_rec = new Vue({
                         var new_list = sessionStorage.getItem("fav_list") + ',' + req_id;
                         sessionStorage.setItem("fav_list", new_list);
                     }
-                );
+                ).catch(function (err) {
+                    alert(err);
+                });
             }
-
-
-
         }
     }
 })
-
-
-
-
 
 var navbar = new Vue({
     el: '#navbar',
@@ -82,18 +65,11 @@ var navbar = new Vue({
     },
     methods: {
         handleClick: function () {
-
             if (!this.login_status || this.login_status == 0) {
                 this.login_show = 1;
             } else {
                 window.location.href = "/my_page.html?name=" + sessionStorage.getItem("username");
             }
-
-
-
-
-
-
         },
         login_request: function () {
 
@@ -121,30 +97,12 @@ var navbar = new Vue({
                             }
                         );
 
-
-
-
-
-
-
-
                     }).catch(function (error) {
                         if (error.response) console.log(error);
                     })
-
-
-
-
-
         }
     }
 });
-
-
-
-
-
-
 
 function getSearchString(key, Url) {
     var str = Url;

@@ -8,7 +8,7 @@ window.onload = function () {
 
 
 
-    axios.get('http://167.179.81.168/bangumi/' + anime_id)
+    axios.get('http://47.105.129.153:8000/bangumi/' + anime_id)
         .then(function (response) {
 
             var data = response.data[0];
@@ -28,7 +28,7 @@ window.onload = function () {
 
 
 
-    axios.get('http://167.179.81.168:8010/CB/' + anime_id)
+    axios.get('http://47.105.129.153:8000:8010/CB/' + anime_id)
         .then(function (response) {
             var data = response.data;
             console.log(data);

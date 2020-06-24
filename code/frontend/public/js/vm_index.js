@@ -13,7 +13,7 @@ window.onload = function () {
     index_rec.cur_page = page_key > 0 ? parseInt(page_key) : 1;
 
 
-    axios.get('http://167.179.81.168/bangumiAll/' + index_rec.cur_page)
+    axios.get('http://47.105.129.153:8000/bangumiAll/' + index_rec.cur_page)
         .then(function (response) {
             var data = response.data;
             console.log(data);

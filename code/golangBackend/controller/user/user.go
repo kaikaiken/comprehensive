@@ -4,6 +4,7 @@ import (
 	"bangumiBackend/db"
 	"bangumiBackend/model"
 	"fmt"
+	"log"
 	"net/http"
 	"time"
 
@@ -90,10 +91,14 @@ func newUser(c echo.Context) (err error) {
 	var newUser model.User
 	var checkUser model.User
 	err = c.Bind(&newUser)
+
+	log.Println("newUser: ", newUser)
+
 	if err != nil {
 		return err
 	}
-	collection.Find(bson.M{"username": newUser.UserName}).One(checkUser)
+	collection.Find(bson.M{"username": newUser.UserName}).One(&checkUser)
+	log.Println("checkUser: ", checkUser)
 	if len(checkUser.UserName) > 0 {
 		return c.JSON(http.StatusBadRequest, "Already in")
 	}
